@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLPH</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #181818; /* Dark background color similar to YouTube */
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 100%; /* Adjusted to 100% width for a full-width container */
+            margin: 0;
+            padding: 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+        }
+
+        #videoInput {
+            display: none;
+        }
+
+        label {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: block;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #cc0000; /* Adjusted the background color for the upload button */
+            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .video-container {
+            display: flex;
+            flex-wrap: wrap; /* Allow videos to wrap to the next line */
+            justify-content: space-evenly;
+            margin-top: 20px;
+        }
+
+        .video-item {
+            flex: 0 0 30%; /* Adjusted to 30% width for three videos in a line */
+            margin: 10px;
+            position: relative;
+            overflow: hidden; /* Hide overflow for a cleaner look */
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        video {
+            width: 100%; /* Adjusted to 100% width for a full-width video */
+            height: auto; /* Automatically adjust the height */
+            border-radius: 5px;
+        }
+
+        button {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background-color: #fff;
+            color: #cc0000; /* Adjusted the delete button color */
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+            border-radius: 3px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #ff6666; /* Adjusted the hover color for the delete button */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="color: #FFD700; position: absolute; top: 10px; left: 10px;">SLPH</h1>
+        <input type="file" id="videoInput" accept="video/*">
+        <label for="videoInput" onclick="uploadVideo()">Upload Video</label>
+        <div id="uploadStatus"></div>
+
+        <h2>Uploaded Videos</h2>
+        <div class="video-container" id="videoContainer"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
